@@ -48,8 +48,8 @@
             <li class="comments_list">
             
               <%= comment.text %>
-              <a href="/users/<%= @prototype.user.id %>">
-              <%= @prototype.user.name %>
+              <a href="/users/<%= comment.user.id %>">
+              <%= comment.user.name %>
               </a>
             </li>
             <% end %>
