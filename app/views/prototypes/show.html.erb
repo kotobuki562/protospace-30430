@@ -4,7 +4,9 @@
       <p class="prototype__hedding">
         <%= "プロトタイプのタイトル"%>
       </p>
-      <%= link_to "by #{@prototype.user.name}", user_path, class: :prototype__user %>
+      <a href="/users/<%= @prototype.user.id %>">
+      by <%= @prototype.user.name %>
+      </a>
       <% if user_signed_in? && @prototype.user.id == current_user.id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype.id),method: :get, class: :prototype__btn %>
@@ -46,7 +48,9 @@
             <li class="comments_list">
             
               <%= comment.text %>
-              <%= link_to comment.user.name, user_path, class: :comment_user %>
+              <a href="/users/<%= @prototype.user.id %>">
+              <%= @prototype.user.name %>
+              </a>
             </li>
             <% end %>
           <% end %>
